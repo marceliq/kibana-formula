@@ -15,4 +15,5 @@ include:
 kibana-pkg:
   pkg.installed:
     - name: {{ kibana.pkg }}
+    - version: {{ kibana.repoVersion }}
 {%- endif %}
