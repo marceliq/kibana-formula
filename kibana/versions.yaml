@@ -1,9 +1,8 @@
-'5.5.1':
+{% if kibana.repoVersion[0] == '5' %}
+{{ kibana.repoVersion }}:
   repo_url: https://artifacts.elastic.co/packages/5.x/apt
   configfile: /etc/kibana/kibana.yml
-'5':
-  repo_url: https://artifacts.elastic.co/packages/5.x/apt
-  configfile: /etc/kibana/kibana.yml
+{% endif %}
 '4.6':
   repo_url: http://packages.elastic.co/kibana/4.6/debian
   configfile: /opt/kibana/config/kibana.yml
