@@ -3,6 +3,7 @@
 
 {% from "kibana/map.jinja" import kibana with context %}
 
+# We directly serialize the config subtree into the YAML file.
 {% if kibana.configfile == '/etc/kibana/kibana.yml' %}
 kibana-create-config-folder:
   file.directory:
@@ -11,8 +12,6 @@ kibana-create-config-folder:
     - user: root
     - group: root
 {% endif %}
-
-# We directly serialize the config subtree into the YAML file.
 kibana-config:
   file.serialize:
     - name: {{ kibana.configfile }}
