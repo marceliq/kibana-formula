@@ -1,7 +1,6 @@
-{% from "kibana/map.jinja" import kibana with context %}
 
-{% if kibana.repoVersion[0] == '5' %}
-{{ kibana.repoVersion }}:
+{% if salt['pillar.get']('kibana:repoVersion[0]' == '5' %}
+{{ salt['pillar.get']('kibana:repoVersion'] }}:
   repo_url: https://artifacts.elastic.co/packages/5.x/apt
   configfile: /etc/kibana/kibana.yml
 {% endif %}
