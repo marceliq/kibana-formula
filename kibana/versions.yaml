@@ -1,6 +1,6 @@
 
 {% if salt['pillar.get']('kibana:repoVersion[0]' == '5') %}
-{{ salt['pillar.get']('kibana:repoVersion']) }}:
+{{ salt['pillar.get']('kibana:repoVersion') }}:
   repo_url: https://artifacts.elastic.co/packages/5.x/apt
   configfile: /etc/kibana/kibana.yml
 {% endif %}
